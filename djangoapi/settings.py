@@ -134,5 +134,5 @@ STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST=[
-    'http://localhost:4200',
+    'https://anarkha18.github.io/angular/',
 ]
