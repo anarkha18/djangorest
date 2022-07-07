@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 from decouple import config
 from dj_database_url import parse as dburl
 
@@ -22,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=false, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -86,7 +87,7 @@ WSGI_APPLICATION = 'djangoapi.wsgi.application'
 #     }
 # }
 default_dburl='sqlite:///'+os.path.join(BASE_DIR,'db.sqlite3')
-DATABASE={'default':config('DATABASE_URL',default=default_dburl,cast=parse),}
+DATABASE={'default':config('DATABASE_URL',default=default_dburl,cast=dburl),}
 
 
 
