@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from decouple import config
-from dj_database_url import parse
+from dj_database_url import parse as dburl
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'djangoapi.wsgi.application'
 #     }
 # }
 default_dburl='sqlite:///'+os.path.join(BASE_DIR,'db.sqlite3')
-DATABASE={'default':config('DATABASE_URL',default=default_dburl,cast=parse)}
+DATABASE={'default':config('DATABASE_URL',default=default_dburl,cast=parse),}
 
 
 
